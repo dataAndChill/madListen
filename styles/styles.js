@@ -56,4 +56,45 @@ export const styles = StyleSheet.create({
   chipText: { color: palette.primary, fontWeight: '700' },
 
   navButtons: { flexDirection: 'row', gap: space.sm, marginTop: space.md, flexWrap: 'wrap' },
+
+
+tileGrid: {
+  flexDirection: "row",
+  flexWrap: "wrap",
+  gap: 12,
+},
+tile: {
+  width: "47%",         
+  backgroundColor: "#fff",
+  borderWidth: 1,
+  borderColor: palette.divider,
+  borderRadius: 16,
+  paddingVertical: 28,
+  alignItems: "center",
+  justifyContent: "center",
+  marginBottom: 12,
+  ...shadow.card,
+},
+tileText: { color: palette.text, fontWeight: "800", fontSize: 16 },
+
+chatBubble: {
+  borderRadius: 14,
+  paddingHorizontal: 14,
+  paddingVertical: 10,
+  marginBottom: 8,
+  maxWidth: "85%",
+},
+chatUser: {
+  backgroundColor: "#fff",
+  alignSelf: "flex-end",
+  borderWidth: 1,
+  borderColor: palette.divider,
+},
+chatAssistant: {
+  backgroundColor: "#f0f3eb",
+  alignSelf: "flex-start",
+  borderWidth: 1,
+  borderColor: palette.divider,
+},
+
 });

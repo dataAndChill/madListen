@@ -1,17 +1,26 @@
-export const RECIPES = [
+export const recipes = [
   {
-    id: 'r1',
-    name: 'Pasta Pomodoro',
-    ingredients: ['pasta', 'tomato', 'garlic', 'olive oil', 'basil', 'salt'],
+    name: "Grøntsagsgryde",
+    ingredients: ["økologiske gulerødder", "kartofler", "bælgfrugter"],
+    co2: "Lav",
+    description: "En grøn og nærende ret baseret på økologiske grøntsager og bælgfrugter."
   },
   {
-    id: 'r2',
-    name: 'Veggie Omelette',
-    ingredients: ['eggs', 'milk', 'spinach', 'onion', 'cheese', 'salt', 'pepper'],
+    name: "Kylling med grønt",
+    ingredients: ["kylling", "broccoli", "ris"],
+    co2: "Middel",
+    description: "En let ret med magert kød og friske grøntsager – et balanceret valg."
   },
   {
-    id: 'r3',
-    name: 'Chicken Stir Fry',
-    ingredients: ['chicken', 'soy sauce', 'garlic', 'ginger', 'bell pepper', 'onion', 'rice'],
+    name: "Oksebøf med kartofler",
+    ingredients: ["oksekød", "kartofler", "smør"],
+    co2: "Høj",
+    description: "En klassisk ret med højt CO₂-aftryk – kan bruges som sammenligning."
   },
+  {
+    name: "Linsesuppe",
+    ingredients: ["linser", "økologiske gulerødder", "løg", "krydderier"],
+    co2: "Lav",
+    description: "Proteinrig, billig og klimavenlig suppe, perfekt til hverdagen."
+  }
 ];

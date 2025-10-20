@@ -1,33 +1,34 @@
-// styles/theme.js
 export const palette = {
-  // base surfaces
-  bg: '#ffffff',
-  card: '#ffffff',
-  surface: '#ffffff',
-
-  // text
-  text: '#222222',
-  textDim: '#555555',
-
-  // accents
-  primary: '#1e90ff',
-
-  // misc
-  success: '#35d07f',
-  warn: '#ffb020',
-  danger: '#ff5d5d',
-  divider: '#e5e7eb', // light gray border/divider
+  bg: "#f7f8f3",
+  text: "#1e1e1e",
+  textDim: "#4d4d4d",
+  primary: "#2b9348",
+  surface: "#ffffff",
+  divider: "#d9d9d9",
+  card: "#ffffff",
+  pantryBg: "#c8e6c9",   // dyb grøn baggrund
+  recipesBg: "#fff4cc",  // mild gul til opskrifter
+  suggestBg: "#fff475"   // frisk citron-gul til forslag
 };
 
-export const radius = { sm: 8, md: 12, lg: 18, xl: 24 };
-export const space  = { xs: 6, sm: 10, md: 16, lg: 24, xl: 36 };
+export const space = {
+  sm: 8,
+  md: 16,
+  lg: 24,
+};
+
+export const radius = {
+  sm: 6,
+  md: 10,
+  lg: 16,
+};
 
 export const shadow = {
   card: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.08,
-    shadowRadius: 12,
-    elevation: 3,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
 };

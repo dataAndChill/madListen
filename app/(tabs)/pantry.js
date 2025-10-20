@@ -1,54 +1,52 @@
-import { useState } from 'react';
-import { SafeAreaView, View, Text, TextInput, Pressable, FlatList } from 'react-native';
-import { styles } from '../../styles/styles';
-import { usePantry } from '../../state/PantryContext';
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { View, Text, TextInput, FlatList, Pressable } from "react-native";
+import { styles } from "../../styles/styles";
+import { palette } from "../../styles/theme";
+import { usePantry } from "../../state/PantryContext";
 
 export default function Pantry() {
   const { items, addItem, removeItem, clear } = usePantry();
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
-  const onAdd = () => {
-    addItem(text);
-    setText('');
-  };
+  const onAdd = () => { addItem(text); setText(""); };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#b7e1c0' }}>
+    <SafeAreaView style={[styles.screen, { backgroundColor: palette.pantryBg }]}>
       <View style={styles.container}>
-        <Text style={styles.title}>Your Pantry</Text>
+        <Text style={styles.title}>Mit forråd</Text>
 
         <View style={styles.inputRow}>
           <TextInput
-            style={styles.input}
-            placeholder="Add ingredient (e.g. garlic)"
             value={text}
             onChangeText={setText}
-            autoCapitalize="none"
+            placeholder="Tilføj ingrediens (fx Broccoli)"
             returnKeyType="done"
             onSubmitEditing={onAdd}
+            style={styles.input}
           />
-          <Pressable onPress={onAdd} style={styles.button}>
-            <Text style={styles.buttonText}>Add</Text>
+          <Pressable style={styles.button} onPress={onAdd}>
+            <Text style={styles.buttonText}>Tilføj</Text>
           </Pressable>
         </View>
 
         <FlatList
           data={[...items].sort()}
-          keyExtractor={(item) => item}
+          keyExtractor={(i) => i}
           renderItem={({ item }) => (
             <View style={[styles.listItem, styles.rowBetween]}>
-              <Text>{item}</Text>
-              <Pressable onPress={() => removeItem(item)} style={styles.chip}>
-                <Text style={styles.chipText}>Remove</Text>
+              <Text style={styles.body}>{item}</Text>
+              <Pressable style={styles.chip} onPress={() => removeItem(item)}>
+                <Text style={styles.chipText}>Fjern</Text>
               </Pressable>
             </View>
           )}
-          ListEmptyComponent={<Text>No items yet. Add your first one!</Text>}
+          ListEmptyComponent={<Text style={styles.body}>Intet i forrådet endnu.</Text>}
         />
 
         <View style={{ height: 12 }} />
-        <Pressable onPress={clear} style={styles.button}>
-          <Text style={styles.buttonText}>Clear Pantry</Text>
+        <Pressable style={styles.button} onPress={clear}>
+          <Text style={styles.buttonText}>Ryd forråd</Text>
         </Pressable>
       </View>
     </SafeAreaView>
